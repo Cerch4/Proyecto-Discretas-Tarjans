@@ -24,7 +24,7 @@ public class Entrenador {
     public boolean estanConectados(String p){
         
         for (int i = 0; i< contactos.size() ; i++ ){
-            if(contactos.size() != 0 && contactos.get(i)== p){
+            if(!contactos.isEmpty() && contactos.get(i).equals(p)){
                 return true;
             }
         }

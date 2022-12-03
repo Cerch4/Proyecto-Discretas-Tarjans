@@ -25,8 +25,6 @@ public class TarjanSccSolverAdjacencyList {
   private boolean solved;
   private int sccCount, id;
   private boolean[] visited;
-  private String[] nombres;
-  private int recibeLlamada;
   private int[] ids, low, sccs;
   private Deque<Integer> stack;
 
@@ -132,7 +130,7 @@ public class TarjanSccSolverAdjacencyList {
     Archivos bongus = new Archivos();
     bongus.Leer();
     
-    bongus.wea();
+    
     bongus.llenarRegion();
     bongus.miRegion.createGraph();
     bongus.miRegion.crearConexion();
@@ -147,7 +145,7 @@ public class TarjanSccSolverAdjacencyList {
       if (!multimap.containsKey(sccs[i])) multimap.put(sccs[i], new ArrayList<>());
       multimap.get(sccs[i]).add(i);
     }
-
+    
     // Prints:
     // Number of Strongly Connected Components: 3
     // Nodes: [0, 1, 2] form a Strongly Connected Component.
@@ -156,7 +154,9 @@ public class TarjanSccSolverAdjacencyList {
     System.out.printf("Number of Strongly Connected Components: %d\n", solver.sccCount());
     for (List<Integer> scc : multimap.values()) {
       System.out.println("Nodes: " + scc + " form a Strongly Connected Component.");
+      System.out.println("Entrenador/a basad@:" + bongus.miRegion.Entrenadores.get(scc.get(0)).nombre);
     }
+    
   }
 }
 

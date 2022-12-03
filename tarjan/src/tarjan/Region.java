@@ -44,16 +44,25 @@ public class Region {
     
     public void crearConexion(){
         for(int i = 0; i < Entrenadores.size(); i++){
-            for(int k = i+1; k < Entrenadores.size(); k++ ){
-                for(int j = 0; j < Entrenadores.get(i).ncontactos ; j++ ){
-                if((Entrenadores.get(i).estanConectados(Entrenadores.get(k).nombre) == true && Entrenadores.get(k).sociable == true) || (Entrenadores.get(i).estanConectados(Entrenadores.get(k).nombre) == true && Entrenadores.get(k).sociable == true)){
-              
-                    addEdge(grafo, j, k);
-                }
+            for(int k = 0 ; k < Entrenadores.size(); k++ ){
+                if(Entrenadores.get(i).estanConectados(Entrenadores.get(k).nombre) == true && (Entrenadores.get(k).sociable == true|| Entrenadores.get(k).estanConectados(Entrenadores.get(i).nombre) == true)){
+                   // System.out.println("conexion entre:" + Integer.toString(i) +"y" +Integer.toString(k));
+                    addEdge(grafo, i, k);
+                
             }
           }
         }
         
+    }
+    
+    public void printAll(){
+        for(int i = 0; i< Entrenadores.size(); i++){
+            System.out.println(Entrenadores.get(i).nombre + " " + Integer.toString(Entrenadores.get(i).ncontactos));
+            for(int k = 0; k < Entrenadores.get(i).ncontactos; k++){
+                System.out.print(Entrenadores.get(i).contactos.get(k) + " ");
+            }
+            System.out.println();
+        }
     }
     
 }

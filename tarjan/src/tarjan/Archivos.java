@@ -37,7 +37,7 @@ public class Archivos {
         }
         misDatos = datos ;
         String aux2 = misDatos.get(0); 
-        System.out.println(aux2.charAt(0));
+        //System.out.println(aux2.charAt(0));
     }
     
     public void wea(){
@@ -66,7 +66,7 @@ public class Archivos {
                 }               
             }
             aux.nombre = aux2;
-            aux2 = "";
+            aux2 = new String();
             for(int v = 0; v < aux.ncontactos; v = v+1){
                 for(int q = big ; q< misDatos.get(i+1).length(); q = q+1){
                  if(misDatos.get(i+1).charAt(q) != ' '){
@@ -81,19 +81,15 @@ public class Archivos {
              }
             }
             if( misDatos.get(i+1).length()- big ==3 ){
-                aux.sociable = true;
-            }
-            
-            else if( misDatos.get(i+1).length()- big == 2 ){
                 aux.sociable = false;
             }
             
-            System.out.println(aux.nombre);
-            System.out.println(Integer.toString(aux.ncontactos));
-            
-            for(int r = 0; r < aux.ncontactos; r = r+1){
-                System.out.println(aux.contactos.get(r));
+            else if( misDatos.get(i+1).length()- big == 2 ){
+                aux.sociable = true;
             }
+            
+            miRegion.addEntrenadores(aux);
+            
        
         }
         
