@@ -121,7 +121,7 @@ public class TarjanSccSolverAdjacencyList {
     graph.get(from).add(to);
   }
 
-  /* Example usage: */
+  
 
   public static void main(String[] arg) throws IOException {
     
@@ -145,7 +145,7 @@ public class TarjanSccSolverAdjacencyList {
       if (!multimap.containsKey(sccs[i])) multimap.put(sccs[i], new ArrayList<>());
       multimap.get(sccs[i]).add(i);
     }
-    
+    bongus.wea();
     // Prints:
     // Number of Strongly Connected Components: 3
     // Nodes: [0, 1, 2] form a Strongly Connected Component.

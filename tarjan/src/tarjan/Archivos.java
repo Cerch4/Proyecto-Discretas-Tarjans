@@ -40,7 +40,7 @@ public class Archivos {
         //System.out.println(aux2.charAt(0));
     }
     
-    public void wea(){
+    public void readText(){
         
         for(int i = 0; i< misDatos.size(); i = i+1){
             System.out.println(""+misDatos.get(i));
