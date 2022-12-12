@@ -108,7 +108,6 @@ int main(){
     fstream file("EnfermeraJoey.txt", ios::in);
     if (file.is_open()) {
         file>>n;
-        cout<<n<<endl;
         for(int i = 0; i<n; i++){
             file>>aux;
             keys.push_back(aux);
