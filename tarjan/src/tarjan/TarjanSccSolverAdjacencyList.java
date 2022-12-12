@@ -152,11 +152,16 @@ public class TarjanSccSolverAdjacencyList {
     // Nodes: [3, 7] form a Strongly Connected Component.
     // Nodes: [4, 5, 6] form a Strongly Connected Component.
     System.out.printf("Number of Strongly Connected Components: %d\n", solver.sccCount());
+     System.out.println("L@s entrenadores que forman el grupo mas pequeño que permite entregar el mensaje a todos son: ");
     for (List<Integer> scc : multimap.values()) {
-      System.out.println("Nodes: " + scc + " form a Strongly Connected Component.");
-      System.out.println("Entrenador/a basad@:" + bongus.miRegion.Entrenadores.get(scc.get(0)).nombre);
+        System.out.print(bongus.miRegion.Entrenadores.get(scc.get(0)).nombre +" ");
+      
     }
+    System.out.println(".");
+    for (List<Integer> scc : multimap.values()) {
+    System.out.println("Nodes: " + scc + " forman un componente fuertemente conexo.");
     
+    }
   }
 }
 
